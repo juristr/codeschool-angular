@@ -1,12 +1,48 @@
 <!DOCTYPE html>
-<html ng-app="gemStore">
-  <head>
+<html lang="en"  ng-app="gemStore">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../favicon.ico">
+
+    <title>GemStore</title>
+
+    <!-- Bootstrap core CSS -->
     <link rel="stylesheet" type="text/css" href="./assets/bootstrap/css/bootstrap.min.css" />
+
+    <!-- Custom styles for this app -->
+    <link href="./assets/app.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
 
     <script type="text/javascript" src="./assets/angular.min.js"></script>
     <script type="text/javascript" src="app.js"></script>
-  </head>
-  <body>
-    <h1>{{ "Hello, Angular!" }}</h1>
-  </body>
+</head>
+<body ng-controller="StoreController as store">
+    <div class="container">
+        <!-- Static navbar -->
+        <div class="navbar navbar-default" role="navigation">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">GemStore</a>
+            </div>
+        </div>
+
+        <div class="panel panel-default">
+            <div class="panel-heading"><strong>{{ store.product.name }}</strong></div>
+            <div class="panel-body">
+                <em class="pull-right">${{store.product.price}}</em>
+            </div>
+        </div>
+
+    </div>
+
+</body>
 </html>
+
