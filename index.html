@@ -34,10 +34,13 @@
             </div>
         </div>
 
-        <div class="panel panel-default">
+        <div class="panel panel-default" ng-hide="vm.product.soldOut">
             <div class="panel-heading"><strong>{{ vm.product.name }}</strong></div>
             <div class="panel-body">
                 <em class="pull-right">${{vm.product.price}}</em>
+            </div>
+            <div class="panel-footer">
+                <button class="btn btn-primary" ng-show="vm.product.canPurchase">Add to Cart</button>
             </div>
         </div>
 
