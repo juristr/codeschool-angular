@@ -2,7 +2,8 @@
     var app = angular.module('gemStore', []);
 
     app.controller('StoreController', function(){
-        this.product = gem;
+        var vm = this;
+        vm.product = gem;
     });
 
     var gem = {

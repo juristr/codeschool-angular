@@ -25,7 +25,7 @@
     <script type="text/javascript" src="./assets/angular.min.js"></script>
     <script type="text/javascript" src="app.js"></script>
 </head>
-<body ng-controller="StoreController as store">
+<body ng-controller="StoreController as vm">
     <div class="container">
         <!-- Static navbar -->
         <div class="navbar navbar-default" role="navigation">
@@ -35,9 +35,9 @@
         </div>
 
         <div class="panel panel-default">
-            <div class="panel-heading"><strong>{{ store.product.name }}</strong></div>
+            <div class="panel-heading"><strong>{{ vm.product.name }}</strong></div>
             <div class="panel-body">
-                <em class="pull-right">${{store.product.price}}</em>
+                <em class="pull-right">${{vm.product.price}}</em>
             </div>
         </div>
 
