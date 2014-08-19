@@ -30,15 +30,17 @@
     <div class="list-group-item" ng-repeat="product in vm.products">
       <h3>{{product.name}} <em class="pull-right">{{product.price | currency}}</em></h3>
 
-      <!-- Image Gallery  -->
-      <div class='gallery' ng-show="product.images.length" ng-controller="GalleryController as gallery">
-        <img ng-src="{{product.images[gallery.current]}}" />
-        <ul class="list-inline thumbs">
-          <li class="thumbnail" ng-repeat="image in product.images">
-            <img ng-src="{{ image }}" />
-          </li>
-        </ul>
-      </div>
+        <!-- Image Gallery  -->
+        <div ng-controller="GalleryController as gallery"  ng-show="product.images.length">
+          <div class="img-wrap">
+            <img ng-src="{{product.images[gallery.current]}}" />
+          </div>
+          <ul class="img-thumbnails clearfix">
+            <li class="small-image pull-left thumbnail" ng-repeat="image in product.images">
+              <img ng-src="{{image}}" />
+            </li>
+          </ul>
+        </div>
 
        <section class="tab" ng-controller="TabController as tab">
         <ul class="nav nav-pills">
