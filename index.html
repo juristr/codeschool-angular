@@ -69,6 +69,32 @@
                         <cite class="clearfix">— {{ review.author }}</cite>
                     </blockquote>
                 </li>
+                <!--  Review Form -->
+                <form name="reviewForm">
+                    <!--  Live Preview -->
+                    <blockquote>
+                    <strong> Stars</strong>
+
+                    <cite class="clearfix">—</cite>
+                    </blockquote>
+
+                    <!--  Review Form -->
+                    <h4>Submit a Review</h4>
+                    <fieldset class="form-group">
+                        <select class="form-control" ng-model="review.stars" ng-options="stars for stars in [5,4,3,2,1]"  title="Stars">
+                            <option value="">Rate the Product</option>
+                        </select>
+                    </fieldset>
+                    <fieldset class="form-group">
+                        <textarea class="form-control" ng-model="review.body" placeholder="Write a short review of the product..." title="Review"></textarea>
+                    </fieldset>
+                    <fieldset class="form-group">
+                        <input type="email" ng-model="review.author" class="form-control" placeholder="jimmyDean@example.org" title="Email" />
+                    </fieldset>
+                    <fieldset class="form-group">
+                        <input type="submit" class="btn btn-primary pull-right" value="Submit Review" />
+                    </fieldset>
+                </form>
             </ul>
         </div>
       </section>
