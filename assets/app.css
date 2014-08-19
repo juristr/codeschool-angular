@@ -6,3 +6,11 @@ body {
 .navbar {
     margin-bottom: 20px;
 }
+
+.ng-invalid.ng-dirty {
+    border-color: red;
+}
+
+.ng-valid.ng-dirty{
+    border-color: green;
+}
