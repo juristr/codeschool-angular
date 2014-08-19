@@ -33,6 +33,17 @@
         }
     });
 
+    app.controller('ReviewController', function(){
+        var vm = this;
+        vm.review = {};
+        vm.addReview = addReview;
+
+        function addReview(product){
+            product.reviews.push(this.review);
+            this.review = {};
+        }
+    });
+
     var gems = [{
       name: 'Azurite',
       description: "Some gems have hidden qualities beyond their luster, beyond their shine... Azurite is one of those gems.",
