@@ -16,21 +16,23 @@
         }
     });
 
-    app.controller('TabController', function() {
-        var vm = this;
-        vm.tab = 1;
-        vm.setTab = setTab;
-        vm.isSet = isSet;
+    app.directive("productTabs", function(){
+      return {
+        restrict: 'E',
+        templateUrl: 'product-tabs.html',
+        controller: function(){
+          this.tab = 1;
 
-        ///////////////////////////
+          this.isSet = function(checkTab) {
+            return this.tab === checkTab;
+          };
 
-        function setTab(tabId) {
-            this.tab = tabId;
-        }
-
-        function isSet(tabId) {
-            return this.tab === tabId;
-        }
+          this.setTab = function(setTab) {
+            this.tab = setTab;
+          };
+        },
+        controllerAs: 'tab'
+      };
     });
 
     app.controller('ReviewController', function(){
