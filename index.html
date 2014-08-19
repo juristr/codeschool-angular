@@ -26,26 +26,22 @@
     <script type="text/javascript" src="app.js"></script>
 </head>
 <body ng-controller="StoreController as vm">
-    <div class="container">
-        <!-- Static navbar -->
-        <div class="navbar navbar-default" role="navigation">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="#">GemStore</a>
-            </div>
-        </div>
+    <!--  Product Container  -->
+    <div class="list-group-item" ng-repeat="product in vm.products">
+      <h3>{{product.name}} <em class="pull-right">{{product.price | currency}}</em></h3>
 
-        <div class="panel panel-default" ng-hide="vm.product.soldOut" ng-repeat="product in vm.products">
-            <div class="panel-heading"><strong>{{ product.name }}</strong></div>
-            <div class="panel-body">
-                <em class="pull-right">{{product.price | currency }}</em>
-            </div>
-            <div class="panel-footer">
-                <button class="btn btn-primary" ng-show="vm.product.canPurchase">Add to Cart</button>
-            </div>
+      <!-- Image Gallery  -->
+      <div class="gallery">
+        <div class="img-wrap">
+          <img ng-src="{{product.images[0]}}" />
         </div>
-
+        <ul class="img-thumbnails clearfix">
+          <li class="small-image pull-left thumbnail" ng-repeat="image in product.images" >
+            <img ng-src="{{image}}" />
+          </li>
+        </ul>
+      </div>
     </div>
-
 </body>
 </html>
 
