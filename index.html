@@ -37,7 +37,7 @@
         <div class="panel panel-default" ng-hide="vm.product.soldOut" ng-repeat="product in vm.products">
             <div class="panel-heading"><strong>{{ product.name }}</strong></div>
             <div class="panel-body">
-                <em class="pull-right">${{product.price}}</em>
+                <em class="pull-right">{{product.price | currency }}</em>
             </div>
             <div class="panel-footer">
                 <button class="btn btn-primary" ng-show="vm.product.canPurchase">Add to Cart</button>
