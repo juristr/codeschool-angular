@@ -6,6 +6,16 @@
         vm.products = gems;
     });
 
+    app.controller('GalleryController', function() {
+        var vm = this;
+        vm.current = 0;
+        vm.setCurrent = setCurrent;
+
+        function setCurrent(val) {
+            this.current = val || 0;
+        }
+    });
+
     app.controller('TabController', function() {
         var vm = this;
         vm.tab = 1;
